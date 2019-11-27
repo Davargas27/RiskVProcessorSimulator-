@@ -14,6 +14,13 @@
 <p align="center">Karen Daniela Vargas Casas y Felipe Galindo Diaz</p><br/>
 
 <div class="row">
+    <div align="center" class="col-sm-12">
+        <p>Ingresa la instrucción</p>
+        <input type="text" style="border-radius: 20px;border-color: green;"> 
+    </div>
+</div>
+
+<div class="row">
     <div class="col-sm-4">
         <table class="table table-striped" style="margin-left: 18%;">
         <thead>
