@@ -15,7 +15,7 @@
 <div class="row"> 
         <h1 align="center">Risk-V Processor Simulator</h1>
     <div  class="col-sm-3">
-        <h5>Digíta el codigo o set de instrucciones que deseas ejecutar</h5>
+        <h5>Digíta el set de instrucciones que deseas ejecutar</h5>
         <textarea name="codearea" id="codearea" rows="10" cols="50" ></textarea><br/>
         <button name="btnLimpiar" id="btnLimpiar" type="button" class="btn btn-primary btn-lg">Limpiar</button>
         <button name="btnProcesar" id="btnProcesar" type="button" class="btn btn-success btn-lg">Ejecutar</button>

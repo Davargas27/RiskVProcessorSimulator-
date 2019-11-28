@@ -1,7 +1,26 @@
 $(document).ready(function(){
 
-    function readCode(cadenaADividir,separador,limiter) {
 
+    function readCode(cadenaADividir,separador,limiter) {
+        
+            $('#e4_rectangle').css('fill','red');
+        setTimeout(
+            () => {
+                $('#e4_rectangle').css('fill','#7cb8bf');     
+            },1* 100);  
+        setTimeout(
+            () => {
+                $('#e1_rectangle').css('fill','red');    
+            },2* 100);        
+           
+        setTimeout(
+            () => {
+                $('#e1_rectangle').css('fill','#7cb8bf');
+            },3* 100);
+        
+        
+      
+        
         arrayLines = cadenaADividir.split(limiter);
 
         for (var i=0; i < arrayLines.length; i++) {
@@ -18,6 +37,11 @@ $(document).ready(function(){
                 parameter3 = $.trim(arrayLine[2]);                
 
                 console.log('inst',instruction);
+                setTimeout(
+                    () => {
+                        $('#e6_polyline').css('fill','red');
+                    },4* 100);
+                
                 procesar(instruction,parameter1,parameter2,parameter3);
             }
            // console.log(arrayLines[i].split(separador));
@@ -39,7 +63,14 @@ $(document).ready(function(){
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
                 resultado = (parseInt($(' #'+parameter2).text()) + parseInt(parameter3));
-                $("#"+parameter1).text(resultado);
+               
+                setTimeout(
+                    () => {
+                        $('#e6_polyline').css('fill','#8BC34A');
+                        $("#"+parameter1).text(resultado);
+                        $("#"+parameter1).css('background-color','red'); 
+                    },5* 100);
+                
                 console.log('entro');
               break;
             case 'add':
