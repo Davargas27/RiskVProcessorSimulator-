@@ -3,9 +3,9 @@ $(document).ready(function(){
     function readCode(cadenaADividir,separador,limiter) {
 
         arrayLines = cadenaADividir.split(limiter);
-
+        console.log(arrayLines);
         for(var i=0; i < arrayLines.length; i++) {
-            arrayLine = arrayLines[i];   
+            arrayLine = arrayLines[i].trim();   
             
             arrayLine = arrayLine.split(separador);
 
@@ -47,7 +47,9 @@ $(document).ready(function(){
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
                 resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
+                hexString = resultado.toString(16);
                 $("#"+parameter1).text(resultado);
+                $("#"+parameter1).next().children('td').first().text(hexString);
               break;
             case 'add':
                 resultado = (parseInt($('#'+parameter2).text()) + parseInt($('#'+parameter3).text()));
@@ -60,6 +62,7 @@ $(document).ready(function(){
             case 'sub':
                 resultado = (parseInt($('#'+parameter2).text()) - parseInt($('#'+parameter3).text()));
                 $("#"+parameter1).text(resultado);
+               
             break;
             case 'lw':
                 $("#"+parameter1).text(parseInt($('#'+parameter2).text()));
