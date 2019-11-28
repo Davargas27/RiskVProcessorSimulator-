@@ -67,12 +67,13 @@ $(document).ready(function(){
                 setTimeout(
                     () => {
                         $('#e6_polyline').css('fill','#8BC34A');
-                        resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
-                        hexString = resultado.toString(16);
-                        $("#"+parameter1).text(resultado);
-                        $("#h"+parameter1).text("0x" + hexString);
+                        
                         $("#"+parameter1).css('background-color','red'); 
-                    },5* 100);
+                    },2* 100);
+                resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
+                hexString = resultado.toString(16);
+                $("#"+parameter1).text(resultado);
+                $("#h"+parameter1).text("0x" + hexString);
                 
               break;
             case 'add':
@@ -86,12 +87,13 @@ $(document).ready(function(){
                         $('#e1_rectangle').css('fill','#7cb8bf');
                     },3* 100);   
                 resultado = (parseInt($('#'+parameter2).text()) + parseInt($('#'+parameter3).text()));
+                
                 setTimeout(
                     () => {
                         $('#e6_polyline').css('fill','#8BC34A');
-                        $("#"+parameter1).text(resultado);
                         $("#"+parameter1).css('background-color','red'); 
-                    },5* 100);                
+                    },5* 100);          
+                $("#"+parameter1).text(resultado);      
               break;
             case 'subi':
                 resultado = (parseInt($('#'+parameter2).text()) - parseInt(parameter3));
