@@ -45,103 +45,103 @@
                 <th scope="row">$at</th>
                 <td>1</td>
                 <td id="at" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hat">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$v0</th>
                 <td>2</td>
                 <td id="v0" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hv0">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$v1</th>
                 <td>3</td>
                 <td id="v1" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hv1">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$a0</th>
                 <td>4</td>
                 <td id="a0" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ha0">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$a3</th>
                 <td>5</td>
                 <td id="a3" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ha3">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$t0</th>
                 <td>6</td>
                 <td id="t0" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ht0">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$t1</th>
                 <td>7</td>
                 <td id="t1" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ht1">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$t2</th>
                 <td>8</td>
                 <td id="t2" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ht2">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$t3</th>
                 <td>9</td>
                 <td id="t3" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="ht3">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$s0</th>
                 <td>10</td>
                 <td id="s0" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hs0">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$s1</th>
                 <td>11</td>
                 <td id="s1" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hs1">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$s2</th>
                 <td>12</td>
                 <td id="s2" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hs2">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$s3</th>
                 <td>13</td>
                 <td id="s3" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hs3">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$gp</th>
                 <td>14</td>
                 <td id="gp" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hgp">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$sp</th>
                 <td>15</td>
                 <td id="sp" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hsp">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$fp</th>
                 <td>16</td>
                 <td id="fp" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hfp">0x0000000000</td> 
             </tr>
             <tr>
                 <th scope="row">$ra</th>
                 <td>17</td>
                 <td id="ra" class="valCalculate">0</td>
-                <td>0x0000000000</td> 
+                <td id="hra">0x0000000000</td> 
             </tr>
         </tbody>
         </table>
@@ -149,6 +149,7 @@
 </div>
 
 <footer>
+<p align="center">Integrantes</p><br/>
 <p align="center">Karen Daniela Vargas Casas y Felipe Galindo Diaz</p><br/>
 </footer>
 

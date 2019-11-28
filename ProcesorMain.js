@@ -13,9 +13,9 @@ $(document).ready(function(){
       
         
         arrayLines = cadenaADividir.split(limiter);
-
+        console.log(arrayLines);
         for(var i=0; i < arrayLines.length; i++) {
-            arrayLine = arrayLines[i];   
+            arrayLine = arrayLines[i].trim();   
             
             arrayLine = arrayLine.split(separador);
 
@@ -64,13 +64,16 @@ $(document).ready(function(){
 
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
-                resultado = (parseInt($(' #'+parameter2).text()) + parseInt(parameter3));               
+                resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
+                hexString = resultado.toString(16);      
                 setTimeout(
                     () => {
                         $('#e6_polyline').css('fill','#8BC34A');
                         $("#"+parameter1).text(resultado);
+                        $("#"+parameter1).next().children('td').first().text(hexString);
                         $("#"+parameter1).css('background-color','red'); 
-                    },5* 100);
+                    },5* 100);       
+               
               break;
             case 'add':
                 setTimeout(
@@ -97,6 +100,7 @@ $(document).ready(function(){
             case 'sub':
                 resultado = (parseInt($('#'+parameter2).text()) - parseInt($('#'+parameter3).text()));
                 $("#"+parameter1).text(resultado);
+               
             break;
             case 'lw':
                 $("#"+parameter1).text(parseInt($('#'+parameter2).text()));
