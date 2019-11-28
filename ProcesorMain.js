@@ -4,30 +4,38 @@ $(document).ready(function(){
 
         arrayLines = cadenaADividir.split(limiter);
 
-        for (var i=0; i < arrayLines.length; i++) {
-            console.log(arrayLines[i]);
+        for(var i=0; i < arrayLines.length; i++) {
             arrayLine = arrayLines[i];   
             
             arrayLine = arrayLine.split(separador);
-            console.log('wwq',arrayLine.length);
 
             if(arrayLine.length >= 2){
+
                 instruction = arrayLine[0].split(' ')[0];
                 parameter1 = arrayLine[0].split(' ')[1];
                 parameter2 = $.trim(arrayLine[1]);
                 parameter3 = $.trim(arrayLine[2]);                
+                
+                response = procesar(instruction,parameter1,parameter2,parameter3);
 
-                console.log('inst',instruction);
-                procesar(instruction,parameter1,parameter2,parameter3);
+                if(response && $.trim(instruction.toLowerCase()) === 'beq'){
+                    i += parseInt(parameter3);
+                }
+
+            }else{
+                if(arrayLine[0] !== '')
+                {
+                    $('.valCalculate').text('0');
+                    alert('El formato de las instrucciones dadas no es el correcto');
+                }              
             }
-           // console.log(arrayLines[i].split(separador));
         }
     }   
 
     $("#btnProcesar").click(function(){
         var codeString = $("#codearea").val();
-        console.log(codeString);
-        readCode($.trim(codeString),',',';');
+        codeString = $.trim(codeString);
+        readCode(codeString,',',';');
     });
 
     $("#btnLimpiar").click(function(){
@@ -38,17 +46,37 @@ $(document).ready(function(){
 
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
-                resultado = (parseInt($(' #'+parameter2).text()) + parseInt(parameter3));
+                resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
                 $("#"+parameter1).text(resultado);
-                console.log('entro');
               break;
             case 'add':
                 resultado = (parseInt($('#'+parameter2).text()) + parseInt($('#'+parameter3).text()));
                 $("#"+parameter1).text(resultado);
-                console.log('res',resultado);
               break;
+            case 'subi':
+                resultado = (parseInt($('#'+parameter2).text()) - parseInt(parameter3));
+                $("#"+parameter1).text(resultado);
+            break;
+            case 'sub':
+                resultado = (parseInt($('#'+parameter2).text()) - parseInt($('#'+parameter3).text()));
+                $("#"+parameter1).text(resultado);
+            break;
+            case 'lw':
+                $("#"+parameter1).text(parseInt($('#'+parameter2).text()));
+            break;
+            case 'sw':
+                $("#"+parameter1).text(parseInt($('#'+parameter2).text()));
+            break;
+            case 'beq': 
+                if(parseInt($('#'+parameter1).text()) !== parseInt($('#'+parameter2).text()))
+                    return true; 
+                else
+                    return false;
+            break;  
             default:
-              // code block
-          }
+                $('.valCalculate').text('0');
+                alert('No es posible ejecutar la instrucción ' + instruction  + ', por favor valide las instrucciones dadas e intentelo nuevamente.');
+        }
+        return true;
     }
 });
