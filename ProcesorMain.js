@@ -8,15 +8,7 @@ $(document).ready(function(){
             () => {
                 $('#e4_rectangle').css('fill','#7cb8bf');     
             },1* 100);  
-        setTimeout(
-            () => {
-                $('#e1_rectangle').css('fill','red');    
-            },2* 100);        
            
-        setTimeout(
-            () => {
-                $('#e1_rectangle').css('fill','#7cb8bf');
-            },3* 100);       
         
       
         
@@ -70,7 +62,8 @@ $(document).ready(function(){
 
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
-                resultado = (parseInt($(' #'+parameter2).text()) + parseInt(parameter3));               
+                resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
+                hexString = resultado.toString(16);      
                 setTimeout(
                     () => {
                         $('#e6_polyline').css('fill','#8BC34A');
@@ -83,8 +76,22 @@ $(document).ready(function(){
                 
               break;
             case 'add':
+                setTimeout(
+                    () => {
+                        $('#e1_rectangle').css('fill','red');    
+                    },2* 100);        
+                    
+                setTimeout(
+                    () => {
+                        $('#e1_rectangle').css('fill','#7cb8bf');
+                    },3* 100);   
                 resultado = (parseInt($('#'+parameter2).text()) + parseInt($('#'+parameter3).text()));
-                $("#"+parameter1).text(resultado);
+                setTimeout(
+                    () => {
+                        $('#e6_polyline').css('fill','#8BC34A');
+                        $("#"+parameter1).text(resultado);
+                        $("#"+parameter1).css('background-color','red'); 
+                    },5* 100);                
               break;
             case 'subi':
                 resultado = (parseInt($('#'+parameter2).text()) - parseInt(parameter3));
