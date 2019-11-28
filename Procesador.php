@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="./ProcesorMain.js"></script>
+  <script src="./ProcesorMainaction.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 </head>
 <body style=" margin-left: 33px; margin-right: 50px;">
@@ -15,7 +16,7 @@
         <h1 align="center">Risk-V Processor Simulator</h1>
     <div  class="col-sm-3">
         <h5>Digíta el codigo o set de instrucciones que deseas ejecutar</h5>
-        <textarea name="codearea" id="codearea" rows="10" cols="50"></textarea><br/>
+        <textarea name="codearea" id="codearea" rows="10" cols="50" ></textarea><br/>
         <button name="btnLimpiar" id="btnLimpiar" type="button" class="btn btn-primary btn-lg">Limpiar</button>
         <button name="btnProcesar" id="btnProcesar" type="button" class="btn btn-success btn-lg">Ejecutar</button>
     </div>
