@@ -1,7 +1,25 @@
 $(document).ready(function(){
 
-    function readCode(cadenaADividir,separador,limiter) {
 
+    function readCode(cadenaADividir,separador,limiter) {
+        
+            $('#e4_rectangle').css('fill','red');
+        setTimeout(
+            () => {
+                $('#e4_rectangle').css('fill','#7cb8bf');     
+            },1* 100);  
+        setTimeout(
+            () => {
+                $('#e1_rectangle').css('fill','red');    
+            },2* 100);        
+           
+        setTimeout(
+            () => {
+                $('#e1_rectangle').css('fill','#7cb8bf');
+            },3* 100);       
+        
+      
+        
         arrayLines = cadenaADividir.split(limiter);
         console.log(arrayLines);
         for(var i=0; i < arrayLines.length; i++) {
@@ -22,12 +40,20 @@ $(document).ready(function(){
                     i += parseInt(parameter3);
                 }
 
+                console.log('inst',instruction);
+                setTimeout(
+                    () => {
+                        $('#e6_polyline').css('fill','red');
+                    },4* 100);
+                
+                procesar(instruction,parameter1,parameter2,parameter3);
+
             }else{
                 if(arrayLine[0] !== '')
                 {
                     $('.valCalculate').text('0');
                     alert('El formato de las instrucciones dadas no es el correcto');
-                }              
+                }       
             }
         }
     }   
@@ -46,6 +72,14 @@ $(document).ready(function(){
 
         switch($.trim(instruction.toLowerCase())) {
             case 'addi':
+                resultado = (parseInt($(' #'+parameter2).text()) + parseInt(parameter3));               
+                setTimeout(
+                    () => {
+                        $('#e6_polyline').css('fill','#8BC34A');
+                        $("#"+parameter1).text(resultado);
+                        $("#"+parameter1).css('background-color','red'); 
+                    },5* 100);
+                
                 resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
                 hexString = resultado.toString(16);
                 $("#"+parameter1).text(resultado);
