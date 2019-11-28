@@ -46,8 +46,6 @@ $(document).ready(function(){
                         $('#e6_polyline').css('fill','red');
                     },4* 100);
                 
-                procesar(instruction,parameter1,parameter2,parameter3);
-
             }else{
                 if(arrayLine[0] !== '')
                 {
@@ -76,14 +74,13 @@ $(document).ready(function(){
                 setTimeout(
                     () => {
                         $('#e6_polyline').css('fill','#8BC34A');
+                        resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
+                        hexString = resultado.toString(16);
                         $("#"+parameter1).text(resultado);
+                        $("#h"+parameter1).text("0x" + hexString);
                         $("#"+parameter1).css('background-color','red'); 
                     },5* 100);
                 
-                resultado = (parseInt ($(' #'+parameter2).text()) + parseInt(parameter3));
-                hexString = resultado.toString(16);
-                $("#"+parameter1).text(resultado);
-                $("#"+parameter1).next().children('td').first().text(hexString);
               break;
             case 'add':
                 resultado = (parseInt($('#'+parameter2).text()) + parseInt($('#'+parameter3).text()));
