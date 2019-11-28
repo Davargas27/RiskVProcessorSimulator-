@@ -10,4 +10,7 @@ $(document).ready(function(){
     $("#btnProcesar").on('click',function(){ 
         $('#e3_rectangle').css('fill','#6d77ab');       
     }); 
+    $("#btnProcesar").click(function(){ 
+        $('#e3_rectangle').css('fill','#6d77ab'); 
+    }); 
 });
